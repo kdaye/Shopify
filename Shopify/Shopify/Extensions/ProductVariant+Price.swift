@@ -18,12 +18,12 @@ extension Storefront.ProductVariant {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         
-        if let amount = formatter.string(from: priceV2.amount as NSNumber),
-           let compareAtAmount = compareAtPriceV2?.amount,
+        if let amount = formatter.string(from: price.amount as NSNumber),
+           let compareAtAmount = compareAtPrice?.amount,
            let regularAmount = formatter.string(from: compareAtAmount as NSNumber) {
-            return DSPrice(amount: amount, regularAmount: regularAmount, currency: priceV2.currencyCode.rawValue)
-        } else if let amount = formatter.string(from: priceV2.amount as NSNumber) {
-            return DSPrice(amount: amount, currency: priceV2.currencyCode.rawValue)
+            return DSPrice(amount: amount, regularAmount: regularAmount, currency: price.currencyCode.rawValue)
+        } else if let amount = formatter.string(from: price.amount as NSNumber) {
+            return DSPrice(amount: amount, currency: price.currencyCode.rawValue)
         }
         
         return nil

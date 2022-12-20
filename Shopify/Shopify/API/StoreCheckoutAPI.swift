@@ -198,7 +198,7 @@ class StoreCheckoutAPI {
                         .ready()
                         .shippingRates { $0
                             .handle()
-                            .priceV2({ $0
+                            .price({ $0
                                 .amount()
                                 .currencyCode()
                             })
@@ -296,7 +296,7 @@ class StoreCheckoutAPI {
                         .id()
                         .name()
                         .orderNumber()
-                        .totalPriceV2({ $0
+                        .totalPrice({ $0
                             .amount()
                             .currencyCode()
                         })

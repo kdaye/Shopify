@@ -29,7 +29,7 @@ class StoreCollectionsUI {
                 
                 return ui.card(title: collection.title,
                                description: collection.description,
-                               image: collection.image?.originalSrc,
+                               image: collection.image?.url,
                                object: collection.id.rawValue as AnyObject)
             }
             
@@ -52,7 +52,7 @@ class StoreCollectionsUI {
                 
                 return ui.list(title: collection.title,
                                description: collection.description,
-                               image: collection.image?.originalSrc,
+                               image: collection.image?.url,
                                object: collection.id.rawValue as AnyObject)
                 
             }

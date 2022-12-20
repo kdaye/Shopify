@@ -14,7 +14,7 @@ import DSKit
 extension Storefront.Product {
     
     func coverImage() -> URL? {
-        return self.images.edges.first?.node.transformedSrc
+        return self.images.edges.first?.node.url
     }
 }
 

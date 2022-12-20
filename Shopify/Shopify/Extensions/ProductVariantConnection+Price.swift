@@ -20,8 +20,8 @@ extension Storefront.ProductVariantConnection {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             
-            if let amount = formatter.string(from: first.node.priceV2.amount as NSNumber) {
-                return DSPrice(amount: amount, currency: first.node.priceV2.currencyCode.rawValue)
+            if let amount = formatter.string(from: first.node.price.amount as NSNumber) {
+                return DSPrice(amount: amount, currency: first.node.price.currencyCode.rawValue)
             }
         }
         

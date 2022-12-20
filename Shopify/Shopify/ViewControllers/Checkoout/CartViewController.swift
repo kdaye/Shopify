@@ -61,12 +61,12 @@ final class CartViewController: DSViewController {
         }
         
         let totalAmount: Decimal = Cart.shared.allProducts().reduce(0) { result, cartProduct in
-            let result = result + ((cartProduct.product.variantBySelectedOptions?.priceV2.amount ?? 0) *  Decimal(cartProduct.quantity))
+            let result = result + ((cartProduct.product.variantBySelectedOptions?.price.amount ?? 0) *  Decimal(cartProduct.quantity))
             return result
         }
         
         let currency = Cart.shared.allProducts().reduce("") { result, cartProduct in
-            cartProduct.product.variantBySelectedOptions?.priceV2.currencyCode.rawValue
+            cartProduct.product.variantBySelectedOptions?.price.currencyCode.rawValue
         }
         
         let formatter = NumberFormatter()

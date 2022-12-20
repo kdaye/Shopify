@@ -159,7 +159,7 @@ extension ShippingViewController {
         let viewModels = shippingRates.map { rate in
             
             shipping(title: rate.title,
-                     price: rate.priceV2.price())
+                     price: rate.price.price())
         }
         
         return viewModels.list().subheadlineHeader(loc("SHIPPING_SELECT_SHIPPING_METHOD_HEADER"))

@@ -43,7 +43,7 @@ class StoreProductsAPI {
                             .edges { $0
                                 .node { $0
                                     .id()
-                                    .transformedSrc()
+                                    .url()
                                 }
                             }
                         }
@@ -51,11 +51,11 @@ class StoreProductsAPI {
                             .edges { $0
                                 .node { $0
                                     .id()
-                                    .compareAtPriceV2({ $0
+                                    .compareAtPrice({ $0
                                         .amount()
                                         .currencyCode()
                                     })
-                                    .priceV2({ $0
+                                    .price({ $0
                                         .amount()
                                         .currencyCode()
                                     })
@@ -108,11 +108,11 @@ class StoreProductsAPI {
                             .name()
                             .value()
                         })
-                        .compareAtPriceV2({ $0
+                        .compareAtPrice({ $0
                             .amount()
                             .currencyCode()
                         })
-                        .priceV2({ $0
+                        .price({ $0
                             .amount()
                             .currencyCode()
                         })
@@ -126,8 +126,8 @@ class StoreProductsAPI {
                         .edges { $0
                             .node { $0
                                 .id()
-                                .transformedSrc()
-                                .originalSrc()
+                                .url()
+                                .url()
                                 .height()
                                 .width()
                             }
@@ -146,11 +146,11 @@ class StoreProductsAPI {
                                     .name()
                                     .value()
                                 })
-                                .compareAtPriceV2({ $0
+                                .compareAtPrice({ $0
                                     .amount()
                                     .currencyCode()
                                 })
-                                .priceV2({ $0
+                                .price({ $0
                                     .amount()
                                     .currencyCode()
                                 })

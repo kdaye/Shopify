@@ -220,7 +220,7 @@ final class ProductDetailsViewController: DSViewController {
     func picturesGallerySection(images: [Storefront.Image]) -> DSSection {
         
         let urls = images.map { image in
-            image.originalSrc
+            image.url
         }
         
         let pictureModels = urls.map { url -> DSViewModel in

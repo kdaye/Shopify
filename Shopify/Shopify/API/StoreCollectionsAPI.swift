@@ -35,7 +35,7 @@ class StoreCollectionsAPI {
                         .title()
                         .description()
                         .image { $0
-                            .originalSrc()
+                            .url()
                         }
                     }
                 }
@@ -71,7 +71,7 @@ class StoreCollectionsAPI {
                     .title()
                     .description()
                     .image { $0
-                        .originalSrc()
+                        .url()
                     }
                     .products(first: 100) { $0
                         .edges { $0
@@ -83,7 +83,7 @@ class StoreCollectionsAPI {
                                     .edges { $0
                                         .node { $0
                                             .id()
-                                            .transformedSrc()
+                                            .url()
                                         }
                                     }
                                 }
@@ -91,11 +91,11 @@ class StoreCollectionsAPI {
                                     .edges { $0
                                         .node { $0
                                             .id()
-                                            .compareAtPriceV2({ $0
+                                            .compareAtPrice({ $0
                                                 .amount()
                                                 .currencyCode()
                                             })
-                                            .priceV2({ $0
+                                            .price({ $0
                                                 .amount()
                                                 .currencyCode()
                                             })

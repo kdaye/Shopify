@@ -26,7 +26,7 @@ class StoreProductsUI {
         products.getProducts(count: 100, filter: filter, success: { products in
             
             let viewModels = products.map { product -> DSViewModel in
-                return DSImageVM(imageUrl: product.images.edges.first?.node.transformedSrc , height: .absolute(200))
+                return DSImageVM(imageUrl: product.images.edges.first?.node.url , height: .absolute(200))
             }
             
             success(viewModels)
